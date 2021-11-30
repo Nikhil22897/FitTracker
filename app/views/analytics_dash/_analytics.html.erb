@@ -2,7 +2,7 @@
   <center>
     <div class="weight_chart">
       <%= area_chart(@weight_log, width: "800px", height: "500px", xtitle: "Interval", ytitle: "Weight (lb)", title: "Weight Analysis", empty: "No data") %>
-      <h2><strong>Goal Weight: </strong><%= current_user&.goal_weight%> lb &nbsp | &nbsp<strong>Current Weight: </strong> <%= WeightLog.last.weight%> lb<h2>
+      <h2><strong>Goal Weight: </strong><%= current_user&.goal_weight%> lb &nbsp | &nbsp<strong>Current Weight: </strong> <%= WeightLog.last.weight if WeightLog.last.present? %> lb<h2>
     </div>
   </center>
   <p></p>
